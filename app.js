@@ -28,20 +28,29 @@ else {
 
 p5.dataset.number = "8"
 p6.dataset.string = "string"
-p7.dataset.arra = "1,2,3,4,5,6"
+p7.dataset.array = "1,2,3,4,5,6"
 p8.dataset.boolean = "true"
 
-p5.dataset.number = (parseInt(p5.dataset.number) + 10).toString()
-p6.dataset.string = p6.dataset.string.length.toString()
-let array2 = p7.dataset.array.split(",")
+p5.dataset.number = (parseInt(p5.dataset.number) + 10).toString();
+p6.dataset.string = p6.dataset.string.length.toString();
+let array2 = p7.dataset.array.split(",");
 
 for (let item of array2) {
     p7.innerHTML += item;
 }
 
 if (p8.dataset.boolean === "true") {
-    p8.innerHTML = "La valeur est vraie"
+    p8.innerHTML = "La valeur est vraie";
 }
 else {
-    p8.innerHTML = "La valeur est fausse"
+    p8.innerHTML = "La valeur est fausse";
 }
+
+person = {
+    prenom : "John",
+    nom : "doe"
+}
+
+const pBonus = document.createElement("p");
+pBonus.dataset.bonus = JSON.stringify(person)
+document.querySelector("body").appendChild(pBonus);
